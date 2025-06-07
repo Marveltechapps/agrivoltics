@@ -66,7 +66,7 @@ class ThemeConstants {
     if (MediaQuery.of(context).size.width > 991) {
       return const EdgeInsets.symmetric(horizontal: 60, vertical: 43);
     } else if (MediaQuery.of(context).size.width > 640) {
-      return const EdgeInsets.symmetric(horizontal: 40, vertical: 30);
+      return const EdgeInsets.symmetric(horizontal: 40, vertical: 10);
     }
     return const EdgeInsets.all(20);
   }

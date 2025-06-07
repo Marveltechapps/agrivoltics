@@ -10,7 +10,7 @@ class CurrentOpenings extends StatelessWidget {
     return Container(
       constraints: const BoxConstraints(
         minWidth: 360,
-        maxWidth: 1440,
+        maxWidth: 1280,
       ),
       width: double.infinity,
       padding: EdgeInsets.symmetric(

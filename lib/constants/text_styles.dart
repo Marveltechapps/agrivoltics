@@ -4,42 +4,39 @@ import 'package:google_fonts/google_fonts.dart';
 class AppTextStyles {
   static const String fontFamily = 'Inter';
 
-  static TextStyle faqTitle = TextStyle(
+  static TextStyle faqTitle = GoogleFonts.inter(
     fontSize: 40,
     fontWeight: FontWeight.w500,
     height: 72 / 66, // lineHeight equivalent
-    fontFamily: fontFamily,
+
     color: Colors.black,
   );
 
-  static TextStyle faqTitleMobile = TextStyle(
+  static TextStyle faqTitleMobile = GoogleFonts.inter(
     fontSize: 30,
     fontWeight: FontWeight.w500,
     height: 49 / 40,
-    fontFamily: fontFamily,
     color: Colors.black,
   );
 
-  static TextStyle faqDescription = TextStyle(
+  static TextStyle faqDescription = GoogleFonts.inter(
     fontSize: 16,
     fontWeight: FontWeight.w300,
     height: 36 / 20,
-    fontFamily: fontFamily,
     color: Colors.black,
   );
 
-  static TextStyle buttonText = TextStyle(
+  static TextStyle buttonText = GoogleFonts.inter(
     fontSize: 18,
     fontWeight: FontWeight.w700,
-    fontFamily: fontFamily,
     color: Colors.white,
   );
 
   static TextStyle partnerWorksTag = GoogleFonts.inter(
-    fontSize: 15,
-    color: Color(0xFF222222),
-    fontWeight: FontWeight.w500,
-  );
+      fontSize: 12,
+      color: Color(0xFF222222),
+      fontWeight: FontWeight.w700,
+      height: 1.75);
 
   static TextStyle mainHeading = GoogleFonts.plusJakartaSans(
     fontSize: 35,
@@ -56,7 +53,7 @@ class AppTextStyles {
   );
 
   static TextStyle bodyText = GoogleFonts.inter(
-    fontSize: 15,
+    fontSize: 14,
     color: Color(0xFF12141D).withOpacity(0.7),
     fontWeight: FontWeight.w400,
     height: 1.2, // line-height: 32px / font-size: 20px
@@ -70,7 +67,7 @@ class AppTextStyles {
   );
 
   static TextStyle titleStyle = GoogleFonts.inter(
-    fontSize: 42,
+    fontSize: 80,
     color: Color(0xFF222222),
     fontWeight: FontWeight.w700,
     letterSpacing: -1.52,
@@ -78,18 +75,18 @@ class AppTextStyles {
   );
 
   static TextStyle titleStyleMobile = GoogleFonts.inter(
-    fontSize: 32,
+    fontSize: 42,
     color: Color(0xFF222222),
     fontWeight: FontWeight.w700,
     letterSpacing: -1.52,
-    height: 1.3, // 52/40
+    height: 1.1, // 52/40
   );
 
   static TextStyle descriptionStyle = GoogleFonts.inter(
     fontSize: 16,
     color: Color(0xFF444444),
     fontWeight: FontWeight.w400,
-    height: 1.3, // 38/24
+    height: 1.25, // 38/24
   );
 
   static const double maxContentWidth = 1280;

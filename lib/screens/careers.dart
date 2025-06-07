@@ -1,16 +1,9 @@
-import 'package:agri_voltics/constants/text_styles.dart';
-import 'package:agri_voltics/screens/careers/careersbanner.dart';
+
 import 'package:agri_voltics/screens/careers/current_opening.dart';
 import 'package:agri_voltics/screens/careers/profile_form_container.dart';
 import 'package:agri_voltics/screens/careers/work_with_us_section.dart';
-import 'package:agri_voltics/screens/communities/communitiesbanner.dart';
-import 'package:agri_voltics/screens/communities/input_design.dart';
-import 'package:agri_voltics/screens/communities/offerings_sections.dart';
-import 'package:agri_voltics/screens/communities/section2.dart';
-import 'package:agri_voltics/screens/contactus/contact_form.dart';
-import 'package:agri_voltics/screens/contactus/contactusbanner.dart';
 import 'package:agri_voltics/widgets/Navbar.dart';
-import 'package:agri_voltics/widgets/faq_sections.dart';
+import 'package:agri_voltics/widgets/mainbanner.dart';
 import 'package:flutter/material.dart';
 import '../widgets/header_widget.dart';
 import '../widgets/footer_widget.dart';
@@ -30,7 +23,11 @@ class Careers extends StatelessWidget {
           child: Column(
             children: [
               const HeaderWidget(),
-              Careersbanner(),
+              // Careersbanner(),
+              Mainbanner(
+                  imageUrl:
+                      'https://cdn.builder.io/api/v1/image/assets/TEMP/3807350b8d0c87a2f101b5eb1b3a7df12cce8718?placeholderIfAbsent=true&apiKey=06096b941d4746ae854b71463e363371',
+                  name: 'Careers'),
               SizedBox(
                 height: 30,
               ),

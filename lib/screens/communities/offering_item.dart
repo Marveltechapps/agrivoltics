@@ -27,7 +27,7 @@ class OfferingItem extends StatelessWidget {
             height: 40,
             fit: BoxFit.contain,
           ),
-          const SizedBox(width: 40),
+          const SizedBox(width: 30),
           Expanded(
             child: RichText(
               text: TextSpan(

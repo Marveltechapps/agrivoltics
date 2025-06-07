@@ -17,7 +17,7 @@ class InputDesign8 extends StatelessWidget {
         return Container(
           padding: EdgeInsets.symmetric(
             horizontal: 0,
-            vertical: 48,
+            vertical: isSmallScreen ? 15 : 48,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -27,6 +27,7 @@ class InputDesign8 extends StatelessWidget {
                   horizontal: 14.355,
                   vertical: 7.656,
                 ),
+                constraints: BoxConstraints(maxWidth: 1280),
                 decoration: BoxDecoration(
                   color: Color(0xFFFFD02F),
                   borderRadius: BorderRadius.circular(10),
@@ -49,7 +50,7 @@ class InputDesign8 extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: isSmallScreen ? 0 : 20),
               Wrap(
                 spacing: isSmallScreen ? 24 : 25,
                 runSpacing: isSmallScreen ? 24 : 32,
@@ -57,7 +58,7 @@ class InputDesign8 extends StatelessWidget {
                   SizedBox(
                     width: _getCardWidth(width),
                     child: RequirementCard(
-                      isOutlined: false,
+                      // isOutlined: false,
                       svgIcon: _regulatorySvg,
                       title: 'Soil Health',
                       description:
@@ -105,6 +106,8 @@ class InputDesign8 extends StatelessWidget {
       return screenWidth - 48; // Full width minus padding
     } else if (screenWidth <= 991) {
       return (screenWidth - 80) / 2; // Half width minus spacing
+    } else if (screenWidth > 1280) {
+      return 1280 / 5;
     }
     return screenWidth / 5; // Default card width
   }

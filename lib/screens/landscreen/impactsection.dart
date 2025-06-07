@@ -11,64 +11,69 @@ class ImpactSection extends StatelessWidget {
     final isDesktop = screenWidth > 991;
 
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 1),
+      constraints: BoxConstraints(maxWidth: 1280),
+      padding: EdgeInsets.symmetric(horizontal: isDesktop ? 60 : 20),
       child: Column(
         children: [
           Container(
             width: double.infinity,
             alignment: Alignment.center,
             child: Container(
-              width: 1083,
+              width: 1280,
               constraints: BoxConstraints(
                 maxWidth: screenWidth,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    width: 250,
-                    height: 35,
-                    padding: const EdgeInsets.symmetric(horizontal: 0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFFFFD02F),
-                      borderRadius: BorderRadius.circular(7),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'OUR IDEA STARTS HERE',
-                        style: TextStyle(
-                          color: Color(0xFF222222),
-                          fontSize: 17,
-                          fontWeight: FontWeight.w700,
-                          height: 1.75,
-                          letterSpacing: -0.8,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        // width: 250,
+                        // height: 35,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: Color(0xFFFFD02F),
+                          borderRadius: BorderRadius.circular(7),
+                        ),
+                        child: Text(
+                          'OUR IDEA STARTS HERE',
+                          style: TextStyle(
+                            color: Color(0xFF222222),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                            height: 1.75,
+                            letterSpacing: 0.0,
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                  const SizedBox(height: 18),
-                  Text(
-                    "Let's together create an impact",
-                    style: GoogleFonts.inter(
-                      color: const Color(0xFF222222),
-                      fontSize: isDesktop ? 50 : 32,
-                      fontWeight: FontWeight.w800,
-                      height: 1,
-                      letterSpacing: -0.8,
-                    ),
-                    textAlign: TextAlign.center,
+                      const SizedBox(height: 18),
+                      Text(
+                        "Let's together create an impact",
+                        style: GoogleFonts.inter(
+                          color: const Color(0xFF222222),
+                          fontSize: isDesktop ? 50 : 32,
+                          fontWeight: FontWeight.w800,
+                          height: 1,
+                          letterSpacing: -0.8,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
           ),
-          const SizedBox(height: 28),
+          const SizedBox(height: 30),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 13),
+            padding: EdgeInsets.symmetric(horizontal: isDesktop ? 10 : 0),
             child: Wrap(
-              spacing: 20,
+              spacing: 40,
               runSpacing: 20,
-              alignment: WrapAlignment.start,
+              alignment: WrapAlignment.spaceBetween,
               children: const [
                 InfoCard(
                   title: 'Outright Purchase',

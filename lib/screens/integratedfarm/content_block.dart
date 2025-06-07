@@ -1,4 +1,6 @@
+import 'package:agri_voltics/widgets/network_image_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ContentBlock extends StatelessWidget {
   final String imageUrl;
@@ -30,55 +32,57 @@ class ContentBlock extends StatelessWidget {
               : MediaQuery.of(context).size.width / 4,
           constraints: BoxConstraints(
             minWidth: 360,
-            maxWidth: isSmallScreen ? double.infinity : 630,
+            maxWidth: isSmallScreen ? double.infinity : 420,
           ),
-          child: Flexible(
-            flex: 1,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(borderRadius),
-                    boxShadow: boxShadow != null ? [boxShadow!] : null,
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(borderRadius),
-                    child: Image.network(
-                      imageUrl,
-                      width: isSmallScreen
-                          ? MediaQuery.of(context).size.width / 2
-                          : MediaQuery.of(context).size.width / 4,
-                      fit: BoxFit.contain,
-                      alignment: Alignment.center,
-                    ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius:
+                      BorderRadius.circular(isSmallScreen ? 5 : borderRadius),
+                  boxShadow: boxShadow != null ? [boxShadow!] : null,
+                ),
+                child: ClipRRect(
+                  borderRadius:
+                      BorderRadius.circular(isSmallScreen ? 5 : borderRadius),
+                  child: NetworkImageWidget(
+                    imageUrl,
+                    width: isSmallScreen
+                        ? MediaQuery.of(context).size.width / 2.5
+                        : MediaQuery.of(context).size.width / 4,
+                    fit: BoxFit.contain,
+                    alignment: Alignment.center,
                   ),
                 ),
-                SizedBox(height: isSmallScreen ? 15 : 20),
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: isSmallScreen ? 28 : 32,
-                    fontWeight: FontWeight.w600,
-                    height: title == 'Medicinal Plants' ? 3.0 : 2.0,
-                    fontFamily: 'Poppins',
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.center,
+              ),
+              SizedBox(height: isSmallScreen ? 10 : 10),
+              Text(
+                title,
+                style: GoogleFonts.poppins(
+                  fontSize: isSmallScreen ? 20 : 28,
+                  fontWeight: FontWeight.w500,
+                  height: title == 'Medicinal Plants' ||
+                          title == 'Integrated Farming'
+                      ? 1.2
+                      : 2.0,
+                  // fontFamily: 'Poppins',
+                  color: Colors.white,
                 ),
-                SizedBox(height: isSmallScreen ? 18 : 20),
-                Text(
-                  description,
-                  style: TextStyle(
-                    fontSize: isSmallScreen ? 18 : 20,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Poppins',
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.center,
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: isSmallScreen ? 5 : 10),
+              Text(
+                description,
+                style: GoogleFonts.poppins(
+                  fontSize: isSmallScreen ? 12 : 16,
+                  fontWeight: FontWeight.w300,
+                  // fontFamily: 'Poppins',
+                  color: Colors.white,
                 ),
-              ],
-            ),
+                textAlign: TextAlign.center,
+              ),
+            ],
           ),
         );
       },

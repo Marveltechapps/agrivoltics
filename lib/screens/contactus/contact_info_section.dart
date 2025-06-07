@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import './constants/contact_icon.dart';
 import './constants/styles.dart';
@@ -9,7 +10,7 @@ class ContactInfoSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width/2.5,
+      width: MediaQuery.of(context).size.width>1280?1280/2.5: MediaQuery.of(context).size.width / 2.5,
       constraints: const BoxConstraints(
         minWidth: 360,
         maxWidth: 600,
@@ -24,22 +25,50 @@ class ContactInfoSection extends StatelessWidget {
           const SizedBox(height: 45.426),
           Column(
             children: [
-              _buildContactItem(
-                context,
-                ContactIcons.locationIcon,
-                '2972 Westheimer Rd. Santa Ana, Illinois 85486',
+              InkWell(
+                onTap: () {
+                  Clipboard.setData(ClipboardData(
+                      text:
+                          '1st Floor, No. 63, Lattice Bridge Road, Adyar, Chennai-600020, India'));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Address Copied to clipboard!')),
+                  );
+                },
+                child: _buildContactItem(
+                  context,
+                  ContactIcons.locationIcon,
+                  '1st Floor, No. 63, Lattice Bridge Road, Adyar, Chennai-600020, India',
+                ),
               ),
               const SizedBox(height: 17.305),
-              _buildContactItem(
-                context,
-                ContactIcons.phoneIcon,
-                '+91 9444 126 240',
+              InkWell(
+                onTap: () {
+                  Clipboard.setData(ClipboardData(text: '+91 9444126240'));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                        content: Text('Mobile Number Copied to clipboard!')),
+                  );
+                },
+                child: _buildContactItem(
+                  context,
+                  ContactIcons.phoneIcon,
+                  '+91 9444126240',
+                ),
               ),
               const SizedBox(height: 17.305),
-              _buildContactItem(
-                context,
-                ContactIcons.emailIcon,
-                'support@builtglory.com',
+              InkWell(
+                onTap: () {
+                  Clipboard.setData(
+                      ClipboardData(text: 'shekar@nextgenagrivoltaics.in'));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Email Copied to clipboard!')),
+                  );
+                },
+                child: _buildContactItem(
+                  context,
+                  ContactIcons.emailIcon,
+                  'shekar@nextgenagrivoltaics.in',
+                ),
               ),
             ],
           ),

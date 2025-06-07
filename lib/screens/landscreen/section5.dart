@@ -1,4 +1,5 @@
 import 'package:agri_voltics/constants/text_styles.dart';
+import 'package:agri_voltics/widgets/network_image_widget.dart';
 import 'package:flutter/material.dart';
 
 class Section5 extends StatelessWidget {
@@ -11,7 +12,7 @@ class Section5 extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.symmetric(
-        vertical: 40,
+        vertical: 5,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -29,25 +30,25 @@ class Section5 extends StatelessWidget {
               children: [
                 Container(
                   constraints: const BoxConstraints(
-                    maxWidth: 1103,
+                    maxWidth: 1280,
                   ),
                   padding: EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: isDesktop
                           ? MediaQuery.of(context).size.width * 0.1
-                          : 20),
+                          : 0),
                   child: Text(
-                    "What's next after purchasing or joint venture of land",
+                    "What's next\nafter purchasing or\njoint venture of land",
                     style: isDesktop
                         ? AppTextStyles.titleStyle
-                        : AppTextStyles.titleStyleMobile,
+                        : AppTextStyles.titleStyleMobile.copyWith(fontSize: 32),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: isDesktop ? 20 : 0),
                 Container(
                   padding: EdgeInsets.symmetric(
-                      vertical: 10,
+                      vertical: 5,
                       horizontal: isDesktop
                           ? MediaQuery.of(context).size.width * 0.1
                           : 20),
@@ -58,25 +59,25 @@ class Section5 extends StatelessWidget {
                     'production and crop cultivation, promoting environmental conservation '
                     'and long-term profitability.',
                     style: AppTextStyles.descriptionStyle,
-                    textAlign: TextAlign.center,
+                    textAlign: isDesktop ? TextAlign.center : TextAlign.left,
                   ),
                 ),
               ],
             ),
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 25),
           ConstrainedBox(
             constraints: const BoxConstraints(
-              maxWidth: AppTextStyles.maxImageWidth,
+              maxWidth: 1280,
               minWidth: 360,
               minHeight: 240,
             ),
             child: AspectRatio(
               aspectRatio: 1.5,
-              child: Image.network(
-                'https://cdn.builder.io/api/v1/image/assets/TEMP/7ffae0a9dc50351575927c387c14ad2ce6e0b387?placeholderIfAbsent=true&apiKey=06096b941d4746ae854b71463e363371',
+              child: NetworkImageWidget(
+                "https://nextagri.s3.ap-south-1.amazonaws.com/Agrivoltaics/Land+partnership/what%E2%80%99s+next+after+purchaing+or+joint+venture+of+land.png",
                 fit: BoxFit.contain,
-                alignment: Alignment.center,
+                // alignment: Alignment.center,
               ),
             ),
           ),

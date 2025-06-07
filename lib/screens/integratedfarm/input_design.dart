@@ -1,3 +1,4 @@
+import 'package:agri_voltics/widgets/network_image_widget.dart';
 import 'package:flutter/material.dart';
 import './styles/styles.dart';
 
@@ -17,12 +18,13 @@ class _InputDesign3State extends State<InputDesign3> {
 
     return Padding(
       padding: EdgeInsets.symmetric(
-          horizontal:
-              isSmallScreen ? AppStyles.paddingSmall : AppStyles.paddingLarge,
-          vertical: 30),
-      child: isLargeScreen
-          ? _buildRowLayout(context)
-          : _buildColumnLayout(context),
+          horizontal: isSmallScreen ? 20 : 60, vertical: 30),
+      child: Container(
+        constraints: BoxConstraints(maxWidth: 1280),
+        child: isLargeScreen
+            ? _buildRowLayout(context)
+            : _buildColumnLayout(context),
+      ),
     );
   }
 
@@ -42,18 +44,65 @@ class _InputDesign3State extends State<InputDesign3> {
     double screenWidth = MediaQuery.of(context).size.width;
     bool isSmallScreen = screenWidth <= AppStyles.breakpointSmall;
 
-    return Container(
-      child: Wrap(
-        spacing: 20,
-        crossAxisAlignment: WrapCrossAlignment.center,
-        alignment: WrapAlignment.center,
-        children: [
-          _buildImage(),
-          SizedBox(
-              height: isSmallScreen ? AppStyles.gapSmall : AppStyles.gapMedium),
-          _buildTextContent(context),
-        ],
-      ),
+    return Wrap(
+      spacing: 20,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      alignment: WrapAlignment.center,
+      children: [
+        ConstrainedBox(
+          constraints: const BoxConstraints(
+            minWidth: 360,
+            maxWidth: 834,
+            minHeight: 194.245,
+            maxHeight: 450,
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: NetworkImageWidget(
+              'https://nextagri.s3.ap-south-1.amazonaws.com/Agrivoltaics/Integrated+Farming/Integrated+Farming+for+a+Greener+Future.png',
+              fit: BoxFit.cover,
+              // semanticLabel:
+              //     'Integrated farming illustration showing a farm with solar panels, wind turbines, livestock and crops',
+            ),
+          ),
+        ),
+        SizedBox(
+            height: isSmallScreen ? AppStyles.gapSmall : AppStyles.gapMedium),
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            minWidth:
+                MediaQuery.of(context).size.width > AppStyles.breakpointLarge
+                    ? 360
+                    : 0,
+            maxWidth: 646,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Integrated Farming for a Greener Future',
+                style: AppStyles.getTitleStyle(context),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.width <=
+                        AppStyles.breakpointSmall
+                    ? 16
+                    : 24.98,
+              ),
+              Text(
+                'Integrating farming combines different agricultural practices, such as '
+                'crop rotation, intercropping, and agroforestry, to optimize land use '
+                'and enhance productivity. This method promotes the coexistence of '
+                'crops and livestock, allowing for resource sharing and reducing '
+                'dependency on chemical inputs. By fostering biodiversity and '
+                'ecological balance, integrating farming practices leads to healthier '
+                'ecosystems and improved yields.',
+                style: AppStyles.getBodyStyle(context),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 
@@ -69,11 +118,11 @@ class _InputDesign3State extends State<InputDesign3> {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(8),
-          child: Image.network(
-            'https://cdn.builder.io/api/v1/image/assets/TEMP/6ddcdb441f267f9a2bbad75db46e6de6ddc1ed49',
+          child: NetworkImageWidget(
+            "https://nextagri.s3.ap-south-1.amazonaws.com/Agrivoltaics/Integrated+Farming/Integrated+Farming+for+a+Greener+Future.png",
             fit: BoxFit.cover,
-            semanticLabel:
-                'Integrated farming illustration showing a farm with solar panels, wind turbines, livestock and crops',
+            // semanticLabel:
+            //     'Integrated farming illustration showing a farm with solar panels, wind turbines, livestock and crops',
           ),
         ),
       ),

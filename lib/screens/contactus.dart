@@ -5,6 +5,7 @@ import 'package:agri_voltics/screens/solutions/agrivoltaics_info.dart';
 import 'package:agri_voltics/screens/solutions/carbon_credits.dart';
 import 'package:agri_voltics/screens/solutions/solutionsbanner.dart';
 import 'package:agri_voltics/widgets/Navbar.dart';
+import 'package:agri_voltics/widgets/mainbanner.dart';
 import 'package:flutter/material.dart';
 import '../widgets/header_widget.dart';
 import '../widgets/footer_widget.dart';
@@ -24,7 +25,11 @@ class Contactus extends StatelessWidget {
           child: Column(
             children: [
               const HeaderWidget(),
-              Contactusbanner(),
+              // Contactusbanner(),
+              Mainbanner(
+                  imageUrl:
+                      'https://nextagri.s3.ap-south-1.amazonaws.com/Agrivoltaics/Contact/Contact.png',
+                  name: 'Contact Us'),
               SizedBox(
                 height: 30,
               ),

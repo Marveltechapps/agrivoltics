@@ -8,10 +8,13 @@ class ContactForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: LayoutBuilder(
         builder: (context, constraints) {
           return Container(
+            constraints: BoxConstraints(
+              maxWidth: 1280
+            ),
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.symmetric(
               vertical: MediaQuery.of(context).size.width > 991

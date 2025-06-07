@@ -15,81 +15,92 @@ class InputDesign2 extends StatelessWidget {
         final isMediumScreen = width <= 991;
 
         return Container(
+          constraints: BoxConstraints(maxWidth: 1280),
           padding: EdgeInsets.symmetric(
-            horizontal: 0,
-            vertical: 48,
+            horizontal: isMediumScreen ? 20 : 60,
+            vertical: 30,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 14.355,
-                  vertical: 7.656,
-                ),
-                decoration: BoxDecoration(
-                  color: Color(0xFFFFD02F),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Text(
-                  'Unlocking the Power of the Sun',
-                  style: AppTextStyles.badge,
-                ),
-              ),
-              SizedBox(height: 0),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'The Key Benefits of Solar Energy',
-                      style: AppTextStyles.getTitleForWidth(width),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 54),
-              Wrap(
-                spacing: isSmallScreen ? 24 : 32,
-                runSpacing: isSmallScreen ? 24 : 32,
+              Column(
+                // mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    width: _getCardWidth(width),
-                    child: RequirementCard(
-                      isOutlined: true,
-                      svgIcon: _regulatorySvg,
-                      title: 'Regulatory Considerations',
-                      description:
-                          'We ensure compliance with local zoning laws, environmental policies, and land-use regulations to facilitate smooth project approvals and long-term operational success.',
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 15,
+                      vertical: 7.656,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Color(0xFFFFD02F),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      'Unlocking the Power of the Sun',
+                      style: AppTextStyles.badge,
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  SizedBox(
-                    width: _getCardWidth(width),
-                    child: RequirementCard(
-                      svgIcon: _landSuitabilitySvg,
-                      title: 'Land Suitability Factors',
-                      description:
-                          'We carefully assess geography, topography, flood risk, and wetland areas to select sites that support sustainable farming practices and solar infrastructure.',
+                  SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.all(0.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'The Key Benefits of Solar Energy',
+                          style: AppTextStyles.getTitleForWidth(width),
+                        ),
+                      ],
                     ),
                   ),
-                  SizedBox(
-                    width: _getCardWidth(width),
-                    child: RequirementCard(
-                      svgIcon: _utilityIntegrationSvg,
-                      title: 'Utility Integration',
-                      description:
-                          'Ideal locations are those with proximity to power lines or utility substations, ensuring seamless grid connectivity and efficient power transmission.',
-                    ),
-                  ),
-                  SizedBox(
-                    width: _getCardWidth(width),
-                    child: RequirementCard(
-                      svgIcon: _landSizeSvg,
-                      title: 'Land Size',
-                      description:
-                          'We work with contiguous land areas ranging from 25 to over 1,000 acres, with a preference for flat, open, and clear terrain to optimize solar installation and agricultural productivity.',
-                    ),
+                  const SizedBox(height: 30),
+                  Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.start,
+                    alignment: WrapAlignment.spaceBetween,
+                    spacing: isSmallScreen ? 24 : 25,
+                    runSpacing: isSmallScreen ? 24 : 25,
+                    children: [
+                      SizedBox(
+                        width: _getCardWidth(width),
+                        child: RequirementCard(
+                          // isOutlined: true,
+                          svgIcon: _regulatorySvg,
+                          title: 'Regulatory Considerations',
+                          description:
+                              'We ensure compliance with local zoning laws, environmental policies, and land-use regulations to facilitate smooth project approvals and long-term operational success.',
+                        ),
+                      ),
+                      SizedBox(
+                        width: _getCardWidth(width),
+                        child: RequirementCard(
+                          svgIcon: _landSuitabilitySvg,
+                          title: 'Land Suitability Factors',
+                          description:
+                              'We carefully assess geography, topography, flood risk, and wetland areas to select sites that support sustainable farming practices and solar infrastructure.',
+                        ),
+                      ),
+                      SizedBox(
+                        width: _getCardWidth(width),
+                        child: RequirementCard(
+                          svgIcon: _utilityIntegrationSvg,
+                          title: 'Utility Integration',
+                          description:
+                              'Ideal locations are those with proximity to power lines or utility substations, ensuring seamless grid connectivity and efficient power transmission.',
+                        ),
+                      ),
+                      SizedBox(
+                        width: _getCardWidth(width),
+                        child: RequirementCard(
+                          svgIcon: _landSizeSvg,
+                          title: 'Land Size',
+                          description:
+                              'We work with contiguous land areas ranging from 25 to over 1,000 acres, with a preference for flat, open, and clear terrain to optimize solar installation and agricultural productivity.',
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -105,15 +116,17 @@ class InputDesign2 extends StatelessWidget {
       return screenWidth - 48; // Full width minus padding
     } else if (screenWidth <= 991) {
       return (screenWidth - 80) / 2; // Half width minus spacing
+    } else if (screenWidth >= 1280) {
+      return 1280 / 5;
     }
     return screenWidth / 5; // Default card width
   }
 
   static const String _regulatorySvg = '''
-<svg width="70" height="70" viewBox="0 0 83 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="41.5" cy="41.812" r="41.5" fill="#7B9540"/>
-  <circle cx="41.5" cy="41.812" r="39" stroke="white"/>
-  <path d="M36.5 37.8745C36.5 37.5098 36.6449 37.1601 36.9027 36.9022C37.1606 36.6444 37.5103 36.4995 37.875 36.4995H48.875C49.2397 36.4995 49.5894 36.6444 49.8473 36.9022C50.1051 37.1601 50.25 37.5098 50.25 37.8745C50.25 38.2392 50.1051 38.5889 49.8473 38.8468C49.5894 39.1046 49.2397 39.2495 48.875 39.2495H37.875C37.5103 39.2495 37.1606 39.1046 36.9027 38.8468C36.6449 38.5889 36.5 38.2392 36.5 37.8745ZM37.875 44.7495H48.875C49.2397 44.7495 49.5894 44.6046 49.8473 44.3468C50.1051 44.0889 50.25 43.7392 50.25 43.3745C50.25 43.0098 50.1051 42.6601 49.8473 42.4022C49.5894 42.1444 49.2397 41.9995 48.875 41.9995H37.875C37.5103 41.9995 37.1606 42.1444 36.9027 42.4022C36.6449 42.6601 36.5 43.0098 36.5 43.3745C36.5 43.7392 36.6449 44.0889 36.9027 44.3468C37.1606 44.6046 37.5103 44.7495 37.875 44.7495ZM59.875 52.9995C59.875 54.4582 59.2955 55.8571 58.2641 56.8886C57.2326 57.92 55.8337 58.4995 54.375 58.4995H35.125C33.6663 58.4995 32.2674 57.92 31.2359 56.8886C30.2045 55.8571 29.625 54.4582 29.625 52.9995V30.9995C29.625 30.2702 29.3353 29.5707 28.8195 29.055C28.3038 28.5392 27.6043 28.2495 26.875 28.2495C26.1457 28.2495 25.4462 28.5392 24.9305 29.055C24.4147 29.5707 24.125 30.2702 24.125 30.9995C24.125 31.9861 24.9552 32.6529 24.9637 32.6598C25.1913 32.8349 25.3583 33.0769 25.4414 33.3518C25.5245 33.6267 25.5194 33.9206 25.4269 34.1925C25.3344 34.4643 25.1591 34.7004 24.9256 34.8675C24.6921 35.0347 24.4121 35.1245 24.125 35.1245C23.8277 35.125 23.5384 35.0278 23.3017 34.8478C23.1023 34.7017 21.375 33.3387 21.375 30.9995C21.375 29.5408 21.9545 28.1419 22.9859 27.1104C24.0174 26.079 25.4163 25.4995 26.875 25.4995H50.25C51.7087 25.4995 53.1076 26.079 54.1391 27.1104C55.1705 28.1419 55.75 29.5408 55.75 30.9995V48.8745H57.125C57.4225 48.8745 57.712 48.971 57.95 49.1495C58.1562 49.2973 59.875 50.6603 59.875 52.9995ZM36.5447 49.8164C36.6386 49.5391 36.8179 49.2986 37.0569 49.1294C37.2959 48.9602 37.5822 48.871 37.875 48.8745H53V30.9995C53 30.2702 52.7103 29.5707 52.1945 29.055C51.6788 28.5392 50.9793 28.2495 50.25 28.2495H31.6342C32.1205 29.0843 32.3762 30.0334 32.375 30.9995V52.9995C32.375 53.7289 32.6647 54.4283 33.1805 54.9441C33.6962 55.4598 34.3957 55.7495 35.125 55.7495C35.8543 55.7495 36.5538 55.4598 37.0695 54.9441C37.5853 54.4283 37.875 53.7289 37.875 52.9995C37.875 52.0129 37.0448 51.3461 37.0363 51.3392C36.8019 51.1716 36.6277 50.9331 36.5392 50.6589C36.4507 50.3847 36.4526 50.0894 36.5447 49.8164ZM57.125 52.9995C57.1078 52.4901 56.9112 52.0031 56.5698 51.6245H40.4136C40.5518 52.0697 40.6219 52.5333 40.6216 52.9995C40.6229 53.9652 40.3685 54.914 39.8842 55.7495H54.375C55.1043 55.7495 55.8038 55.4598 56.3195 54.9441C56.8353 54.4283 57.125 53.7289 57.125 52.9995Z" fill="white"/>
+<svg width="83" height="84" viewBox="0 0 83 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="41.5" cy="41.812" r="41.5" fill="white"/>
+<circle cx="41.5" cy="41.812" r="39" stroke="#7B9540"/>
+<path d="M36.5 37.8745C36.5 37.5098 36.6449 37.1601 36.9027 36.9022C37.1606 36.6444 37.5103 36.4995 37.875 36.4995H48.875C49.2397 36.4995 49.5894 36.6444 49.8473 36.9022C50.1051 37.1601 50.25 37.5098 50.25 37.8745C50.25 38.2392 50.1051 38.5889 49.8473 38.8468C49.5894 39.1046 49.2397 39.2495 48.875 39.2495H37.875C37.5103 39.2495 37.1606 39.1046 36.9027 38.8468C36.6449 38.5889 36.5 38.2392 36.5 37.8745ZM37.875 44.7495H48.875C49.2397 44.7495 49.5894 44.6046 49.8473 44.3468C50.1051 44.0889 50.25 43.7392 50.25 43.3745C50.25 43.0098 50.1051 42.6601 49.8473 42.4022C49.5894 42.1444 49.2397 41.9995 48.875 41.9995H37.875C37.5103 41.9995 37.1606 42.1444 36.9027 42.4022C36.6449 42.6601 36.5 43.0098 36.5 43.3745C36.5 43.7392 36.6449 44.0889 36.9027 44.3468C37.1606 44.6046 37.5103 44.7495 37.875 44.7495ZM59.875 52.9995C59.875 54.4582 59.2955 55.8571 58.2641 56.8886C57.2326 57.92 55.8337 58.4995 54.375 58.4995H35.125C33.6663 58.4995 32.2674 57.92 31.2359 56.8886C30.2045 55.8571 29.625 54.4582 29.625 52.9995V30.9995C29.625 30.2702 29.3353 29.5707 28.8195 29.055C28.3038 28.5392 27.6043 28.2495 26.875 28.2495C26.1457 28.2495 25.4462 28.5392 24.9305 29.055C24.4147 29.5707 24.125 30.2702 24.125 30.9995C24.125 31.9861 24.9552 32.6529 24.9637 32.6598C25.1913 32.8349 25.3583 33.0769 25.4414 33.3518C25.5245 33.6267 25.5194 33.9206 25.4269 34.1925C25.3344 34.4643 25.1591 34.7004 24.9256 34.8675C24.6921 35.0347 24.4121 35.1245 24.125 35.1245C23.8277 35.125 23.5384 35.0278 23.3017 34.8478C23.1023 34.7017 21.375 33.3387 21.375 30.9995C21.375 29.5408 21.9545 28.1419 22.9859 27.1104C24.0174 26.079 25.4163 25.4995 26.875 25.4995H50.25C51.7087 25.4995 53.1076 26.079 54.1391 27.1104C55.1705 28.1419 55.75 29.5408 55.75 30.9995V48.8745H57.125C57.4225 48.8745 57.712 48.971 57.95 49.1495C58.1562 49.2973 59.875 50.6603 59.875 52.9995ZM36.5447 49.8164C36.6386 49.5391 36.8179 49.2986 37.0569 49.1294C37.2959 48.9602 37.5822 48.871 37.875 48.8745H53V30.9995C53 30.2702 52.7103 29.5707 52.1945 29.055C51.6788 28.5392 50.9793 28.2495 50.25 28.2495H31.6342C32.1205 29.0843 32.3762 30.0334 32.375 30.9995V52.9995C32.375 53.7289 32.6647 54.4283 33.1805 54.9441C33.6962 55.4598 34.3957 55.7495 35.125 55.7495C35.8543 55.7495 36.5538 55.4598 37.0695 54.9441C37.5853 54.4283 37.875 53.7289 37.875 52.9995C37.875 52.0129 37.0448 51.3461 37.0363 51.3392C36.8019 51.1716 36.6277 50.9331 36.5392 50.6589C36.4507 50.3847 36.4526 50.0894 36.5447 49.8164ZM57.125 52.9995C57.1078 52.4901 56.9112 52.0031 56.5698 51.6245H40.4136C40.5518 52.0697 40.6219 52.5333 40.6216 52.9995C40.6229 53.9652 40.3685 54.914 39.8842 55.7495H54.375C55.1043 55.7495 55.8038 55.4598 56.3195 54.9441C56.8353 54.4283 57.125 53.7289 57.125 52.9995Z" fill="#7B9540"/>
 </svg>
   ''';
 

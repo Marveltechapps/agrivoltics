@@ -7,7 +7,7 @@ class AppTextStyles {
         color: AppColors.black,
         fontSize: fontSize ?? 40,
         fontWeight: FontWeight.w700,
-        height: 1.58,
+        height: 1.38,
       );
 
   static TextStyle body1({double? fontSize}) => GoogleFonts.inter(
@@ -19,16 +19,16 @@ class AppTextStyles {
 
   static TextStyle cardTitle = GoogleFonts.inter(
     color: AppColors.white,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeight.w600,
-    height: 1.58,
+    height: 1.4,
   );
 
   static TextStyle cardBody = GoogleFonts.inter(
     color: AppColors.white,
-    fontSize: 15,
+    fontSize: 12,
     fontWeight: FontWeight.w400,
-    height: 1.58,
+    height: 1.4,
   );
   static TextStyle get heading => GoogleFonts.plusJakartaSans(
         fontSize: 32,

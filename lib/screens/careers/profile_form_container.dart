@@ -52,105 +52,107 @@ class _ProfileFormContainerState extends State<ProfileFormContainer> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final horizontalPadding =
-        screenWidth > 991 ? MediaQuery.of(context).size.width * 0.1 : 16.0;
+    final horizontalPadding = screenWidth > 991 ? 60.0 : 20.0;
 
-    return Container(
-      constraints: const BoxConstraints(minWidth: 360),
+    return Padding(
+      // padding: const EdgeInsets.all(8.0),
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 26),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'If your profile is not listed above, Give your details here.',
-                    style: AppTextStyles.title,
-                  ),
-                  const SizedBox(height: 26),
-                  TextFormField(
-                    controller: _fullNameController,
-                    decoration: _buildInputDecoration().copyWith(
-                      hintText: 'Full Name',
-                      hintStyle: AppTextStyles.inputText,
+      child: Container(
+        constraints: const BoxConstraints(minWidth: 360, maxWidth: 1280),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 26),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'If your profile is not listed above, Give your details here.',
+                      style: AppTextStyles.title,
                     ),
-                    style: AppTextStyles.inputText,
-                  ),
-                  const SizedBox(height: 15),
-                  TextFormField(
-                    controller: _phoneController,
-                    decoration: _buildInputDecoration().copyWith(
-                      hintText: 'Phone Number',
-                      hintStyle: AppTextStyles.inputText,
+                    const SizedBox(height: 26),
+                    TextFormField(
+                      controller: _fullNameController,
+                      decoration: _buildInputDecoration().copyWith(
+                        hintText: 'Full Name',
+                        hintStyle: AppTextStyles.inputText,
+                      ),
+                      style: AppTextStyles.inputText,
                     ),
-                    style: AppTextStyles.inputText,
-                  ),
-                  const SizedBox(height: 15),
-                  TextFormField(
-                    controller: _emailController,
-                    decoration: _buildInputDecoration().copyWith(
-                      hintText: 'E-Mail',
-                      hintStyle: AppTextStyles.inputText,
+                    const SizedBox(height: 15),
+                    TextFormField(
+                      controller: _phoneController,
+                      decoration: _buildInputDecoration().copyWith(
+                        hintText: 'Phone Number',
+                        hintStyle: AppTextStyles.inputText,
+                      ),
+                      style: AppTextStyles.inputText,
                     ),
-                    style: AppTextStyles.inputText,
-                  ),
-                  const SizedBox(height: 15),
-                  TextFormField(
-                    controller: _resumeController,
-                    decoration: _buildInputDecoration().copyWith(
-                      hintText: 'Resume',
-                      hintStyle: AppTextStyles.inputText,
+                    const SizedBox(height: 15),
+                    TextFormField(
+                      controller: _emailController,
+                      decoration: _buildInputDecoration().copyWith(
+                        hintText: 'E-Mail',
+                        hintStyle: AppTextStyles.inputText,
+                      ),
+                      style: AppTextStyles.inputText,
                     ),
-                    style: AppTextStyles.inputText,
-                  ),
-                  const SizedBox(height: 15),
-                  TextFormField(
-                    controller: _coverLetterController,
-                    decoration: _buildInputDecoration().copyWith(
-                      hintText: 'Cover letter',
-                      hintStyle: AppTextStyles.inputText,
+                    const SizedBox(height: 15),
+                    TextFormField(
+                      controller: _resumeController,
+                      decoration: _buildInputDecoration().copyWith(
+                        hintText: 'Resume',
+                        hintStyle: AppTextStyles.inputText,
+                      ),
+                      style: AppTextStyles.inputText,
                     ),
-                    style: AppTextStyles.inputText,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: Padding(
-              padding: EdgeInsets.only(
-                top: screenWidth > 991 ? 56 : 40,
-              ),
-              child: TextButton(
-                onPressed: () {
-                  if (_formKey.currentState?.validate() ?? false) {
-                    // Handle form submission
-                  }
-                },
-                style: TextButton.styleFrom(
-                  backgroundColor: AppColors.submitButton,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: screenWidth > 991 ? 52 : 20,
-                    vertical: 17,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(2),
-                  ),
-                ),
-                child: Text(
-                  'Submit',
-                  style: AppTextStyles.submitButton,
+                    const SizedBox(height: 15),
+                    TextFormField(
+                      controller: _coverLetterController,
+                      decoration: _buildInputDecoration().copyWith(
+                        hintText: 'Cover letter',
+                        hintStyle: AppTextStyles.inputText,
+                      ),
+                      style: AppTextStyles.inputText,
+                    ),
+                  ],
                 ),
               ),
             ),
-          ),
-        ],
+            Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: screenWidth > 991 ? 30 : 30,
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    if (_formKey.currentState?.validate() ?? false) {
+                      // Handle form submission
+                    }
+                  },
+                  style: TextButton.styleFrom(
+                    backgroundColor: AppColors.submitButton,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: screenWidth > 991 ? 52 : 20,
+                      vertical: 17,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  ),
+                  child: Text(
+                    'Submit',
+                    style: AppTextStyles.submitButton,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -6,10 +6,10 @@ class FontSizes {
   static double scale(BuildContext context, double base) {
     double width = MediaQuery.of(context).size.width;
 
-    if (width < 360) return base * 0.85; // Small phones
-    if (width < 480) return base * 0.9; // Normal phones
-    if (width < 768) return base; // Large phones/small tablets
-    if (width < 1024) return base * 1.1; // Tablets
+    if (width < 400) return base * 0.5; // Small phones
+    if (width < 480) return base * 0.5; // Normal phones
+    if (width < 768) return base * 0.6; // Large phones/small tablets
+    if (width <= 1024) return base * 0.9; // Tablets
     return base * 1.2; // Desktop / Web
   }
 
@@ -71,14 +71,14 @@ class AppTextStyles {
     } else if (width <= 991) {
       return title.copyWith(fontSize: 32, height: 1.14);
     } else {
-      return title.copyWith(fontSize: 32, height: 1.14);
+      return title.copyWith(fontSize: 35, height: 1.14);
     }
     return title;
   }
 
-  static TextStyle headerNavigation = TextStyle(
-    fontFamily: interFont,
-    fontSize: 18,
+  static TextStyle headerNavigation = GoogleFonts.inter(
+    // fontFamily: interFont,
+    fontSize: 16,
     color: AppColors.text,
     fontWeight: FontWeight.w400,
     height: 1.5,
@@ -91,17 +91,17 @@ class AppTextStyles {
     height: 1.25,
   );
 
-  static TextStyle sectionTitle = TextStyle(
-    fontFamily: interFont,
+  static TextStyle sectionTitle = GoogleFonts.inter(
+    // fontFamily: interFont,
     fontSize: 40,
     color: AppColors.text,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: 1,
   );
 
-  static TextStyle bodyText = TextStyle(
-    fontFamily: openSansFont,
-    fontSize: 19,
+  static TextStyle bodyText = GoogleFonts.openSans(
+    // fontFamily: openSansFont,
+    fontSize: 16,
     color: AppColors.secondaryText,
     fontWeight: FontWeight.w400,
     height: 1.5,

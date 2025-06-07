@@ -1,4 +1,5 @@
 import 'package:agri_voltics/screens/solarpower/check_circle.dart';
+import 'package:agri_voltics/widgets/network_image_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,7 +16,8 @@ class PowerGenerationSection extends StatelessWidget {
         final isMobile = constraints.maxWidth <= 640;
 
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(
+              horizontal: isDesktop ? 60 : 0, vertical: isMobile ? 10 : 30),
           child: Center(
             child: Container(
               // constraints: const BoxConstraints(maxWidth: 1525),
@@ -32,7 +34,7 @@ class PowerGenerationSection extends StatelessWidget {
                       ],
                     )
                   : Padding(
-                      padding: const EdgeInsets.all(40.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: Column(
                         spacing: isDesktop ? 20 : (isTablet ? 32 : 24),
                         // runSpacing: isDesktop ? 40 : (isTablet ? 32 : 24),
@@ -57,7 +59,9 @@ class PowerGenerationSection extends StatelessWidget {
         minWidth: isMobile ? 280 : (isTablet ? 300 : 360),
         maxWidth: isTablet || isMobile
             ? MediaQuery.of(context).size.width
-            : MediaQuery.of(context).size.width / 2.4,
+            : MediaQuery.of(context).size.width > 1280
+                ? 1280 / 2.4
+                : MediaQuery.of(context).size.width / 2.4,
       ),
       child: Column(
         children: [
@@ -77,7 +81,7 @@ class PowerGenerationSection extends StatelessWidget {
                 child: Text(
                   'What We Do with Power Generation',
                   style: GoogleFonts.inter(
-                    fontSize: 14,
+                    fontSize: 11,
                     fontWeight: FontWeight.w700,
                     color: const Color(0xFF222222),
                   ),
@@ -87,7 +91,7 @@ class PowerGenerationSection extends StatelessWidget {
               Text(
                 'We supply power to community, corporates and Farming',
                 style: GoogleFonts.plusJakartaSans(
-                  fontSize: isMobile ? 26 : (isTablet ? 30 : 34),
+                  fontSize: isMobile ? 26 : (isTablet ? 30 : 32),
                   fontWeight: FontWeight.w700,
                   height: isMobile ? 1.25 : (isTablet ? 1.14 : 1.13),
                   color: const Color(0xFF0F172A),
@@ -95,7 +99,7 @@ class PowerGenerationSection extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 15),
           _buildFeaturesList(),
         ],
       ),
@@ -142,7 +146,7 @@ class PowerGenerationSection extends StatelessWidget {
   Widget _buildFeatureItem(
       {required String title, required String description}) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 14.513),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: const BoxDecoration(
         border: Border(
           bottom: BorderSide(color: Color(0xFF777777)),
@@ -152,13 +156,13 @@ class PowerGenerationSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const CheckCircleIcon(),
-          const SizedBox(width: 14.706),
+          const SizedBox(width: 10),
           Expanded(
             child: RichText(
               text: TextSpan(
                 style: GoogleFonts.inter(
-                  fontSize: 15,
-                  height: 1.6,
+                  fontSize: 14,
+                  height: 1.5,
                   color: const Color(0xFF333333),
                 ),
                 children: [
@@ -179,17 +183,19 @@ class PowerGenerationSection extends StatelessWidget {
   Widget _buildImage(BuildContext context, bool isMobile, bool isTablet) {
     return Container(
       constraints: BoxConstraints(
-        minWidth: isMobile ? 280 : (isTablet ? 340 : 380),
-        minHeight: 333.658,
-      ),
+          minWidth: isMobile ? 280 : (isTablet ? 340 : 380),
+          minHeight: 333.658,
+          maxWidth: 1280),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(24.719),
-        child: Image.network(
-          'https://cdn.builder.io/api/v1/image/assets/TEMP/651e128040a528b6cddba0a418af6c97fac08ba5',
-          fit: BoxFit.contain,
+        child: NetworkImageWidget(
+          "https://nextagri.s3.ap-south-1.amazonaws.com/Agrivoltaics/Solar+power/We+supply+power+to+community%2C+corporates+and+Farming.png",
+          fit: BoxFit.cover,
           width: isMobile || isTablet
-              ? MediaQuery.of(context).size.width / 1.5
-              : MediaQuery.of(context).size.width / 2.3,
+              ? MediaQuery.of(context).size.width / 1
+              : MediaQuery.of(context).size.width > 1280
+                  ? 1280 / 2.3
+                  : MediaQuery.of(context).size.width / 2.3,
         ),
       ),
     );

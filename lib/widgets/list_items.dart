@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ListItem extends StatelessWidget {
   final String imageUrl;
@@ -37,11 +38,11 @@ class ListItem extends StatelessWidget {
           Expanded(
             child: RichText(
               text: TextSpan(
-                style: const TextStyle(
+                style:  GoogleFonts.inter(
                   fontSize: 19,
                   color: Color(0xFF333333),
                   height: 1.6,
-                  fontFamily: 'Inter',
+                  // fontFamily: 'Inter',
                 ),
                 children: [
                   TextSpan(

@@ -13,16 +13,19 @@ class InfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.of(context).size.width < 500;
     return Container(
       constraints: const BoxConstraints(
         minWidth: 240,
       ),
       width: MediaQuery.of(context).size.width > 729
-          ? MediaQuery.of(context).size.width / 2.5
+          ? MediaQuery.of(context).size.width > 1280
+              ? 1280 / 2.5
+              : MediaQuery.of(context).size.width / 2.5
           : double.infinity,
       padding: EdgeInsets.symmetric(
-        horizontal: MediaQuery.of(context).size.width > 991 ? 32 : 20,
-        vertical: 31,
+        horizontal: MediaQuery.of(context).size.width > 991 ? 0 : 0,
+        vertical: 15,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,23 +34,23 @@ class InfoCard extends StatelessWidget {
             title,
             style: GoogleFonts.inter(
               color: Color(0xFF222222),
-              fontSize: 30,
+              fontSize: isMobile ? 24 : 30,
               fontWeight: FontWeight.w700,
               height: 1,
               letterSpacing: -0.67,
             ),
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.justify,
           ),
-          const SizedBox(height: 39),
+          const SizedBox(height: 20),
           Text(
             description,
             style: GoogleFonts.inter(
               color: Color(0xFF444444),
-              fontSize: 17.5,
+              fontSize: 16,
               fontWeight: FontWeight.w400,
-              height: 1.2,
+              height: 1.3,
             ),
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.justify,
           ),
         ],
       ),
