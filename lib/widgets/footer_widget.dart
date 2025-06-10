@@ -271,13 +271,21 @@ class FooterWidget extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Contact',
-                            style: GoogleFonts.roboto(
-                              color: Colors.white,
-                              // fontFamily: 'Roboto',
-                              fontSize: 24,
-                              fontWeight: FontWeight.w600,
+                          InkWell(
+                            onTap: () {
+                              GoRouter.of(context).push('/contact');
+                              context
+                                  .read<NavigationProvider>()
+                                  .updateRoute('/contact');
+                            },
+                            child: Text(
+                              'Contact',
+                              style: GoogleFonts.roboto(
+                                color: Colors.white,
+                                // fontFamily: 'Roboto',
+                                fontSize: 24,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ),
                           const SizedBox(height: 17),
@@ -312,7 +320,7 @@ class FooterWidget extends StatelessWidget {
                                     );
                                   },
                                   child: Text(
-                                    '+91 9444126240',
+                                    '+91 9444 126 240',
                                     style: GoogleFonts.roboto(
                                       color: Colors.white,
                                       // fontFamily: 'Roboto',
@@ -476,13 +484,21 @@ class FooterWidget extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Contact',
-                      style: GoogleFonts.roboto(
-                        color: Colors.white,
-                        // fontFamily: 'Roboto',
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600,
+                    InkWell(
+                      onTap: () {
+                        GoRouter.of(context).push('/contact');
+                        context
+                            .read<NavigationProvider>()
+                            .updateRoute('/contact');
+                      },
+                      child: Text(
+                        'Contact',
+                        style: GoogleFonts.roboto(
+                          color: Colors.white,
+                          // fontFamily: 'Roboto',
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                     const SizedBox(height: 17),
@@ -517,7 +533,7 @@ class FooterWidget extends StatelessWidget {
                               );
                             },
                             child: Text(
-                              '+91 9444126240',
+                              '+91 9444 126 240',
                               style: GoogleFonts.roboto(
                                 color: Colors.white,
                                 // fontFamily: 'Roboto',

@@ -10,7 +10,9 @@ class ContactInfoSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width>1280?1280/2.5: MediaQuery.of(context).size.width / 2.5,
+      width: MediaQuery.of(context).size.width > 1280
+          ? 1280 / 2.5
+          : MediaQuery.of(context).size.width / 2.5,
       constraints: const BoxConstraints(
         minWidth: 360,
         maxWidth: 600,
@@ -52,7 +54,7 @@ class ContactInfoSection extends StatelessWidget {
                 child: _buildContactItem(
                   context,
                   ContactIcons.phoneIcon,
-                  '+91 9444126240',
+                  '+91 9444 126 240',
                 ),
               ),
               const SizedBox(height: 17.305),

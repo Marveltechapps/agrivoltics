@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class NetworkImageWidget extends StatelessWidget {
   final String imageUrl;
@@ -9,43 +11,33 @@ class NetworkImageWidget extends StatelessWidget {
   final Alignment? alignment;
 
   const NetworkImageWidget(
-    
-    this.imageUrl,
-    {
+    this.imageUrl, {
     super.key,
     this.fit = BoxFit.cover,
     this.width,
     this.height,
     this.borderRadius,
-    this.alignment
+    this.alignment,
   });
 
   @override
   Widget build(BuildContext context) {
-    Widget image = Image.network(
-      imageUrl,
+    Widget image = CachedNetworkImage(
+      imageUrl: imageUrl,
       fit: fit,
       width: width,
       height: height,
-      alignment: alignment??Alignment.center,
-      loadingBuilder: (context, child, loadingProgress) {
-        if (loadingProgress == null) return child;
-        return Center(
-          child: SizedBox(
-            width: 24,
-            height: 24,
-            child: CircularProgressIndicator(strokeWidth: 2),
-          ),
-        );
+      alignment: alignment ?? Alignment.center,
+
+      // loadingBuilder: (context, child, loadingProgress) {
+      //   if (loadingProgress == null) return child;
+      //   return Lottie.asset('lottie/image.json');
+      // },
+      placeholder: (context, data) {
+        return Lottie.asset('lottie/image.json');
       },
-      errorBuilder: (context, error, stackTrace) {
-        return Center(
-          child: Icon(
-            Icons.broken_image,
-            size: width ?? 40,
-            color: Colors.grey,
-          ),
-        );
+      errorWidget: (context, error, stackTrace) {
+        return Lottie.asset('lottie/image.json');
       },
     );
 

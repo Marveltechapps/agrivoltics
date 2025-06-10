@@ -63,13 +63,13 @@ class ContentSectionWidget extends StatelessWidget {
                           return SvgPicture.asset(
                             'assets/icons/impofagri.svg',
                             width:
-                                constraints.maxWidth * 0.42, // adjust as needed
+                                constraints.maxWidth * 0.44, // adjust as needed
                             fit: BoxFit.contain,
                           );
                         },
                       ),
                       Text(
-                        "Agrivoltics",
+                        "Agrivoltaics",
                         style: GoogleFonts.inter(
                           // fontFamily: 'Inter',
                           fontSize: FontSizes.scale(context, 32),
@@ -139,13 +139,13 @@ class ContentSectionWidget extends StatelessWidget {
                             builder: (context, constraints) {
                               return SvgPicture.asset(
                                 'assets/icons/impofagri.svg',
-                                width: 200, // adjust as needed
+                                width: 215, // adjust as needed
                                 fit: BoxFit.contain,
                               );
                             },
                           ),
                           Text(
-                            "Agrivoltics",
+                            "Agrivoltaics",
                             style: AppTextStyles.sectionTitle
                                 .copyWith(fontSize: 32),
                           ),

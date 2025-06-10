@@ -101,11 +101,15 @@ class ContentSectionWidget extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(
-                        title,
-                        style:
-                            AppTextStyles.sectionTitle.copyWith(fontSize: 30),
-                        textAlign: TextAlign.left,
+                      Expanded(
+                        child: Text(
+                          title,
+                          style:
+                              AppTextStyles.sectionTitle.copyWith(fontSize: 30),
+                          textAlign: TextAlign.left,
+                          softWrap: true,
+                          maxLines: 4,
+                        ),
                       ),
                     ],
                   ),

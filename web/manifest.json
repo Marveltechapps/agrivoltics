@@ -1,11 +1,11 @@
 {
-    "name": "agri_voltics",
-    "short_name": "agri_voltics",
-    "start_url": ".",
+    "name": "Agrivoltaics in TamilNadu",
+    "short_name": "Agrivoltaics",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Tamil Nadu's first agrivoltaics project. NextGen Agrivoltaics pioneers sustainable farming with solar energy, optimizing land use for agriculture and renewable power generation.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

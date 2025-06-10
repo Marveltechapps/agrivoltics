@@ -81,9 +81,9 @@ class _ProjectsState extends State<Projects> with WidgetsBindingObserver {
     if (visibleFraction < 0.5) {
       _controller.pause();
     } else {
-      if (!_controller.value.isPlaying) {
-        _controller.play();
-      }
+      // if (!_controller.value.isPlaying) {
+      //   _controller.play();
+      // }
     }
   }
 
@@ -142,7 +142,7 @@ class _ProjectsState extends State<Projects> with WidgetsBindingObserver {
                 height: 0,
               ),
               ContentSectionWidget(
-                  title: 'About our agrivoltics project',
+                  title: 'About our agrivoltaics project',
                   description:
                       "Our pioneering project in Tamil Nadu reconnects people with nature by combining clean energy and organic cultivation, fostering responsibility for the environment. By empowering local communities through sustainable work, we nurture both human wellbeing and the land. This initiative sets a new benchmark for holistic rural development, showing that caring for nature and ourselves go hand in hand. Join us in building a future where people and nature thrive together.",
                   imageUrl:
@@ -280,7 +280,7 @@ class _ProjectsState extends State<Projects> with WidgetsBindingObserver {
                                 clipBehavior: Clip.hardEdge,
                                 decoration: BoxDecoration(
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(20))),
+                                        BorderRadius.all(Radius.circular(12))),
                                 child: AspectRatio(
                                   aspectRatio: _controller.value.aspectRatio,
                                   child: _controller.value.isInitialized

@@ -263,28 +263,33 @@ class _EnquiryFormSectionState extends State<EnquiryFormSection> {
       // Handle form submission
       print('Form submitted');
       setState(() => isLoading = true);
-      final dio = Dio();
-      final baseUrl = "http://nextgenagrivoltaics.in/";
-      final response =
-          await dio.post(baseUrl + 'api/contact/send-email', data: {
-        "firstName": _firstNameController.text,
-        "phoneNumber": _phoneController.text,
-        "email": _emailController.text,
-        "city": _cityController.text,
-        "zipcode": int.parse(_postalCodeController.text),
-        "message": _messageController.text
-      });
-      if (response.statusCode == 200) {
-        _firstNameController.clear();
-        _phoneController.clear();
-        _emailController.clear();
-        _cityController.clear();
-        _postalCodeController.clear();
-        _messageController.clear();
-        showSuccessPopup(context);
+      try {
+        final dio = Dio();
+        final baseUrl = "https://nextgenagrivoltaics.in/";
+        final response =
+            await dio.post('${baseUrl}api/api/contact/send-email', data: {
+          "firstName": _firstNameController.text,
+          "phoneNumber": _phoneController.text,
+          "email": _emailController.text,
+          "city": _cityController.text,
+          "zipcode": int.parse(_postalCodeController.text),
+          "message": _messageController.text
+        });
+        if (response.statusCode == 200) {
+          _firstNameController.clear();
+          _phoneController.clear();
+          _emailController.clear();
+          _cityController.clear();
+          _postalCodeController.clear();
+          _messageController.clear();
+          showSuccessPopup(context);
 
-        setState(() => isLoading = false);
-      } else {
+          setState(() => isLoading = false);
+        } else {
+          showErrorPopup(context);
+          setState(() => isLoading = false);
+        }
+      } catch (e) {
         showErrorPopup(context);
         setState(() => isLoading = false);
       }
