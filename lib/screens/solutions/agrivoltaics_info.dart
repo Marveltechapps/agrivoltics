@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'detail_section.dart';
 
 class AgrivoltaicsInfo extends StatelessWidget {
-  const AgrivoltaicsInfo({Key? key}) : super(key: key);
+  const AgrivoltaicsInfo({super.key});
 
   @override
   Widget build(BuildContext context) {

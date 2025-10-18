@@ -13,7 +13,7 @@ import '../widgets/content_section_widget.dart';
 import '../widgets/footer_widget.dart';
 
 class Termsandconditions extends StatelessWidget {
-  const Termsandconditions({Key? key}) : super(key: key);
+  const Termsandconditions({super.key});
 
   @override
   Widget build(BuildContext context) {

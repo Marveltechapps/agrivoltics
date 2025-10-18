@@ -4,7 +4,7 @@ import 'package:agri_voltics/widgets/network_image_widget.dart';
 import 'package:flutter/material.dart';
 
 class SolarPowerSection extends StatelessWidget {
-  const SolarPowerSection({Key? key}) : super(key: key);
+  const SolarPowerSection({super.key});
 
   @override
   Widget build(BuildContext context) {

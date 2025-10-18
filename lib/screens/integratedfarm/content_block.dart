@@ -11,14 +11,14 @@ class ContentBlock extends StatelessWidget {
   final BoxShadow? boxShadow;
 
   const ContentBlock({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.title,
     required this.description,
     required this.imageAspectRatio,
     this.borderRadius = 14.0,
     this.boxShadow,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

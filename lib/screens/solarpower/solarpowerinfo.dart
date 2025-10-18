@@ -4,7 +4,7 @@ import './constants/colors.dart';
 import './constants/text_styles.dart';
 
 class SolarPowerInfo extends StatelessWidget {
-  const SolarPowerInfo({Key? key}) : super(key: key);
+  const SolarPowerInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class SolarPowerInfo extends StatelessWidget {
                     children: [
                       // Image Section
                       Expanded(
-                        child: Container(
+                        child: SizedBox(
                           width: isMobile
                               ? constraints.maxWidth
                               : (isTablet ? 300 : 380),

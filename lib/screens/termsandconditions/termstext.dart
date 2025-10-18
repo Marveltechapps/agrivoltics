@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './theme/text_styles.dart';
 
 class TermsOfServiceScreen extends StatelessWidget {
-  const TermsOfServiceScreen({Key? key}) : super(key: key);
+  const TermsOfServiceScreen({super.key});
 
   TextStyle _getResponsiveHeaderStyle(BuildContext context) {
     double width = MediaQuery.of(context).size.width;

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ContentSection extends StatelessWidget {
-  const ContentSection({Key? key}) : super(key: key);
+  const ContentSection({super.key});
 
   @override
   Widget build(BuildContext context) {

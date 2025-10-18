@@ -4,7 +4,7 @@ import 'package:agri_voltics/theme/styles.dart';
 import 'package:flutter/material.dart';
 
 class InputDesign extends StatelessWidget {
-  const InputDesign({Key? key}) : super(key: key);
+  const InputDesign({super.key});
 
   @override
   Widget build(BuildContext context) {

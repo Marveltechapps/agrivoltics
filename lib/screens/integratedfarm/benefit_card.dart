@@ -10,14 +10,14 @@ class BenefitCard extends StatelessWidget {
   final double bottomPadding;
 
   const BenefitCard({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.title,
     required this.description,
     this.isOutlined = false,
     this.minHeight = 0,
     this.bottomPadding = 17,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

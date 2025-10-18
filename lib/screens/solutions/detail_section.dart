@@ -9,12 +9,12 @@ class DetailSection extends StatelessWidget {
   final List<String> benefits;
 
   const DetailSection({
-    Key? key,
+    super.key,
     required this.imageSrc,
     required this.title,
     required this.description,
     required this.benefits,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +99,7 @@ class DetailSection extends StatelessWidget {
                             ],
                           ),
                         ))
-                    .toList(),
+                    ,
               ],
             )
           : Row(
@@ -170,7 +170,7 @@ class DetailSection extends StatelessWidget {
                                   ],
                                 ),
                               ))
-                          .toList(),
+                          ,
                     ],
                   ),
                 ),

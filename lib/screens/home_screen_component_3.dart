@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SectionContainer extends StatelessWidget {
-  const SectionContainer({Key? key}) : super(key: key);
+  const SectionContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -146,13 +146,12 @@ class _InfoCard extends StatelessWidget {
   final bool isMobile;
   final String route;
 
-  _InfoCard(
-      {Key? key,
+  const _InfoCard(
+      {super.key,
       required this.title,
       required this.description,
       required this.isMobile,
-      required this.route})
-      : super(key: key);
+      required this.route});
 
   @override
   Widget build(BuildContext context) {

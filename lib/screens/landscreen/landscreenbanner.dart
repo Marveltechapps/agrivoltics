@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LandPartnershipBanner extends StatelessWidget {
-  const LandPartnershipBanner({Key? key}) : super(key: key);
+  const LandPartnershipBanner({super.key});
 
   @override
   Widget build(BuildContext context) {

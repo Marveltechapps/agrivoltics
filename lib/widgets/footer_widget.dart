@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class FooterWidget extends StatelessWidget {
-  const FooterWidget({Key? key}) : super(key: key);
+  const FooterWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -92,38 +92,6 @@ class FooterWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildFirstColumn(bool isMobile) {
-    return Container(
-      constraints: BoxConstraints(
-        minWidth: 360,
-      ),
-      child: Flexible(
-        flex: 1,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(
-              'assets/logo/LOGO1.png',
-              width: 337,
-              fit: BoxFit.contain,
-            ),
-            const SizedBox(height: 13),
-            Text(
-              'Contact us today to explore our services and take advantage of the great deals available from us',
-              style: TextStyle(
-                color: Colors.white,
-                // fontFamily: 'Roboto',
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                height: 1.69,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
   Widget _buildSecondColumn(bool isMobile, BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
@@ -145,7 +113,7 @@ class FooterWidget extends StatelessWidget {
                           context.read<NavigationProvider>().updateRoute('/');
                         },
                         child: Image.asset(
-                          'assets/logo/LOGO1.png',
+                          'assets/logo/web_logo.png',
                           width: 337,
                           fit: BoxFit.contain,
                         ),
@@ -349,7 +317,7 @@ class FooterWidget extends StatelessWidget {
                                 child: InkWell(
                                   onTap: () {
                                     Clipboard.setData(ClipboardData(
-                                        text: 'shekar@nextgenagrivoltaics.in'));
+                                        text: 'Contactavaram@gmail.com'));
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                           content: Text(
@@ -357,7 +325,7 @@ class FooterWidget extends StatelessWidget {
                                     );
                                   },
                                   child: Text(
-                                    'shekar@nextgenagrivoltaics.in',
+                                    'Contactavaram@gmail.com',
                                     style: GoogleFonts.roboto(
                                       color: Colors.white,
                                       // fontFamily: 'Roboto',
@@ -400,7 +368,7 @@ class FooterWidget extends StatelessWidget {
                         context.read<NavigationProvider>().updateRoute('/');
                       },
                       child: Image.asset(
-                        'assets/logo/LOGO1.png',
+                        'assets/logo/web_logo.png',
                         width: 337,
                         fit: BoxFit.contain,
                       ),
@@ -563,7 +531,7 @@ class FooterWidget extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               Clipboard.setData(ClipboardData(
-                                  text: 'shekar@nextgenagrivoltaics.in'));
+                                  text: 'Contactavaram@gmail.com'));
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                     content:
@@ -571,7 +539,7 @@ class FooterWidget extends StatelessWidget {
                               );
                             },
                             child: Text(
-                              'shekar@nextgenagrivoltaics.in',
+                              'Contactavaram@gmail.com',
                               style: GoogleFonts.roboto(
                                 color: Colors.white,
                                 // fontFamily: 'Roboto',

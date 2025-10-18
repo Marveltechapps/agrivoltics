@@ -11,12 +11,12 @@ class RequirementCard extends StatefulWidget {
   final bool isOutlined;
 
   const RequirementCard({
-    Key? key,
+    super.key,
     required this.svgIcon,
     required this.title,
     required this.description,
     this.isOutlined = false,
-  }) : super(key: key);
+  });
 
   @override
   State<RequirementCard> createState() => _RequirementCardState();

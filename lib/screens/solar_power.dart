@@ -15,7 +15,7 @@ import '../widgets/footer_widget.dart';
 import 'package:agri_voltics/constants/text_styles.dart';
 
 class SolarPower extends StatelessWidget {
-  const SolarPower({Key? key}) : super(key: key);
+  const SolarPower({super.key});
 
   @override
   Widget build(BuildContext context) {

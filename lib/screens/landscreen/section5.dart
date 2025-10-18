@@ -3,7 +3,7 @@ import 'package:agri_voltics/widgets/network_image_widget.dart';
 import 'package:flutter/material.dart';
 
 class Section5 extends StatelessWidget {
-  const Section5({Key? key}) : super(key: key);
+  const Section5({super.key});
 
   @override
   Widget build(BuildContext context) {

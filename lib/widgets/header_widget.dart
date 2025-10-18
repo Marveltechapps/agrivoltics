@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import '../theme/styles.dart';
 
 class HeaderWidget extends StatelessWidget {
-  const HeaderWidget({Key? key}) : super(key: key);
+  const HeaderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,8 @@ class HeaderWidget extends StatelessWidget {
                   context.read<NavigationProvider>().updateRoute('/');
                 },
                 child: Image.asset(
-                  'assets/logo/LOGO.png',
+                  'assets/logo/web_logo.png',
+                  height: 72,
                   width: 200,
                   fit: BoxFit.contain,
                 ),
@@ -103,7 +104,7 @@ class HeaderWidget extends StatelessWidget {
           title: Padding(
             padding: const EdgeInsets.all(0.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 InkWell(
@@ -112,8 +113,8 @@ class HeaderWidget extends StatelessWidget {
                     context.read<NavigationProvider>().updateRoute('/');
                   },
                   child: Image.asset(
-                    'assets/logo/LOGO.png',
-                    width: MediaQuery.of(context).size.width / 3.4,
+                    'assets/logo/web_logo.png',
+                    width: MediaQuery.of(context).size.width / 4,
                     fit: BoxFit.contain,
                   ),
                 ),

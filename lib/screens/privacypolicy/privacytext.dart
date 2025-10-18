@@ -2,7 +2,7 @@ import 'package:agri_voltics/screens/termsandconditions/theme/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class PrivacyPolicyScreen extends StatelessWidget {
-  const PrivacyPolicyScreen({Key? key}) : super(key: key);
+  const PrivacyPolicyScreen({super.key});
 
   TextStyle _getResponsiveHeaderStyle(BuildContext context) {
     double width = MediaQuery.of(context).size.width;

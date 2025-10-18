@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import './styles/styles.dart';
 
 class InputDesign3 extends StatefulWidget {
-  const InputDesign3({Key? key}) : super(key: key);
+  const InputDesign3({super.key});
 
   @override
   State<InputDesign3> createState() => _InputDesign3State();

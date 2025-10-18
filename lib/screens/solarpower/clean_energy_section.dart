@@ -4,7 +4,7 @@ import './constants/theme_constants.dart';
 import 'package:dotted_border/dotted_border.dart';
 
 class CleanEnergySection extends StatelessWidget {
-  const CleanEnergySection({Key? key}) : super(key: key);
+  const CleanEnergySection({super.key});
 
   @override
   Widget build(BuildContext context) {

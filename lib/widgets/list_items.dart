@@ -7,11 +7,11 @@ class ListItem extends StatelessWidget {
   final String boldText;
 
   const ListItem({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.text,
     required this.boldText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

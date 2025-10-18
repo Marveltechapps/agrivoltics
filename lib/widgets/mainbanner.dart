@@ -5,8 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 class Mainbanner extends StatefulWidget {
   final String imageUrl;
   final String name;
-  const Mainbanner({Key? key, required this.imageUrl, required this.name})
-      : super(key: key);
+  const Mainbanner({super.key, required this.imageUrl, required this.name});
 
   @override
   State<Mainbanner> createState() => _MainbannerState();

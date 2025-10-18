@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Projectbanner extends StatelessWidget {
-  const Projectbanner({Key? key}) : super(key: key);
+  const Projectbanner({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../constants/text_styles.dart';
 
 class PartnerWorksSection extends StatelessWidget {
-  const PartnerWorksSection({Key? key}) : super(key: key);
+  const PartnerWorksSection({super.key});
 
   @override
   Widget build(BuildContext context) {

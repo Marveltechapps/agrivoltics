@@ -3,7 +3,7 @@ import './styles/colors.dart';
 import './styles/text_styles.dart';
 
 class ProfileFormContainer extends StatefulWidget {
-  const ProfileFormContainer({Key? key}) : super(key: key);
+  const ProfileFormContainer({super.key});
 
   @override
   _ProfileFormContainerState createState() => _ProfileFormContainerState();

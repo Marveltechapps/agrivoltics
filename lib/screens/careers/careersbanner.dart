@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Careersbanner extends StatelessWidget {
-  const Careersbanner({Key? key}) : super(key: key);
+  const Careersbanner({super.key});
 
   @override
   Widget build(BuildContext context) {

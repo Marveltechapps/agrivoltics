@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CheckCircleIcon extends StatelessWidget {
-  const CheckCircleIcon({Key? key}) : super(key: key);
+  const CheckCircleIcon({super.key});
 
   @override
   Widget build(BuildContext context) {

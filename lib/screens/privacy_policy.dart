@@ -14,7 +14,7 @@ import '../widgets/content_section_widget.dart';
 import '../widgets/footer_widget.dart';
 
 class PrivacyPolicy extends StatelessWidget {
-  const PrivacyPolicy({Key? key}) : super(key: key);
+  const PrivacyPolicy({super.key});
 
   @override
   Widget build(BuildContext context) {

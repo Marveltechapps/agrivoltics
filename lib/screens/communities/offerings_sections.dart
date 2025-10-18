@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'offering_item.dart';
 
 class OfferingsSection extends StatelessWidget {
-  const OfferingsSection({Key? key}) : super(key: key);
+  const OfferingsSection({super.key});
 
   @override
   Widget build(BuildContext context) {

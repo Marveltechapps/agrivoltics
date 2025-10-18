@@ -1,10 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mailer/mailer.dart';
+import 'package:mailer/smtp_server/gmail.dart';
 import './constants/styles.dart';
 
 class EnquiryFormSection extends StatefulWidget {
-  const EnquiryFormSection({Key? key}) : super(key: key);
+  const EnquiryFormSection({super.key});
 
   @override
   State<EnquiryFormSection> createState() => _EnquiryFormSectionState();
@@ -77,6 +79,48 @@ class _EnquiryFormSectionState extends State<EnquiryFormSection> {
   }
 
   void onSubmit() async {}
+
+  sendmail() async {
+    String username = 'Contactavaram@gmail.com';
+    String password = 'Manufacturing_123';
+//Email ID — Contactavaram@gmail.com
+// password - Manufacturing_123
+    final smtpServer = gmail(username, password);
+    // Use the SmtpServer class to configure an SMTP server:
+    // final smtpServer = SmtpServer('smtp.domain.com');
+    // See the named arguments of SmtpServer for further configuration
+    // options.
+    debugPrint("Mail SENT");
+    // Create our message.
+    final message = Message()
+      ..from = Address(username, 'Avaram')
+      ..recipients.add('marveltech32@gmail.com')
+      ..ccRecipients.addAll(['marveldesigner90@gmail.com', ''])
+      ..bccRecipients.add(Address(''))
+      ..subject = 'Test Dart Mailer library :: 😀 :: ${DateTime.now()}'
+      ..text = 'This is the plain text.\nThis is line 2 of the text part.'
+      ..html = "<h1>Test</h1>\n<p>Hey! Here's some HTML content</p>";
+
+    try {
+      final sendReport = await send(message, smtpServer);
+      debugPrint('Message sent: $sendReport');
+    } on MailerException catch (e) {
+      debugPrint('Message not sent.');
+      for (var p in e.problems) {
+        debugPrint('Problem: ${p.code}: ${p.msg}');
+      }
+    }
+    var connection = PersistentConnection(smtpServer);
+
+    // Send the first message
+    await connection.send(message);
+
+    // send the equivalent message
+    // await connection.send(equivalentMessage);
+
+    // close the connection
+    await connection.close();
+  }
 
   @override
   void dispose() {
@@ -283,7 +327,7 @@ class _EnquiryFormSectionState extends State<EnquiryFormSection> {
           _postalCodeController.clear();
           _messageController.clear();
           showSuccessPopup(context);
-
+          debugPrint(response.data);
           setState(() => isLoading = false);
         } else {
           showErrorPopup(context);

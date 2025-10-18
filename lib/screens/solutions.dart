@@ -11,7 +11,7 @@ import '../widgets/header_widget.dart';
 import '../widgets/footer_widget.dart';
 
 class Solutions extends StatelessWidget {
-  const Solutions({Key? key}) : super(key: key);
+  const Solutions({super.key});
 
   @override
   Widget build(BuildContext context) {

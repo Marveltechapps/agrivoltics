@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './styles/text_styles.dart';
 
 class WorkWithUsSection extends StatelessWidget {
-  const WorkWithUsSection({Key? key}) : super(key: key);
+  const WorkWithUsSection({super.key});
 
   @override
   Widget build(BuildContext context) {

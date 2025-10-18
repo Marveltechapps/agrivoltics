@@ -11,12 +11,12 @@ class ContentSectionWidget extends StatelessWidget {
   final bool imageLeft;
 
   const ContentSectionWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.imageUrl,
     this.imageLeft = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

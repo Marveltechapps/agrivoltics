@@ -3,7 +3,7 @@ import 'contact_info_section.dart';
 import 'enquiry_form_section.dart';
 
 class ContactForm extends StatelessWidget {
-  const ContactForm({Key? key}) : super(key: key);
+  const ContactForm({super.key});
 
   @override
   Widget build(BuildContext context) {

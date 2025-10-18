@@ -14,7 +14,7 @@ import '../widgets/footer_widget.dart';
 import 'package:agri_voltics/constants/text_styles.dart';
 
 class IntegratedFarming extends StatelessWidget {
-  const IntegratedFarming({Key? key}) : super(key: key);
+  const IntegratedFarming({super.key});
 
   @override
   Widget build(BuildContext context) {

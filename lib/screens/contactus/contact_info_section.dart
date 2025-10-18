@@ -5,7 +5,7 @@ import './constants/contact_icon.dart';
 import './constants/styles.dart';
 
 class ContactInfoSection extends StatelessWidget {
-  const ContactInfoSection({Key? key}) : super(key: key);
+  const ContactInfoSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class ContactInfoSection extends StatelessWidget {
               InkWell(
                 onTap: () {
                   Clipboard.setData(
-                      ClipboardData(text: 'shekar@nextgenagrivoltaics.in'));
+                      ClipboardData(text: 'Contactavaram@gmail.com'));
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text('Email Copied to clipboard!')),
                   );
@@ -69,7 +69,7 @@ class ContactInfoSection extends StatelessWidget {
                 child: _buildContactItem(
                   context,
                   ContactIcons.emailIcon,
-                  'shekar@nextgenagrivoltaics.in',
+                  'Contactavaram@gmail.com',
                 ),
               ),
             ],

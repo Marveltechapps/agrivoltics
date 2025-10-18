@@ -19,7 +19,7 @@ import '../widgets/content_section_widget.dart';
 import '../widgets/footer_widget.dart';
 
 class LandPartnership extends StatelessWidget {
-  const LandPartnership({Key? key}) : super(key: key);
+  const LandPartnership({super.key});
 
   @override
   Widget build(BuildContext context) {

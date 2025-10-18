@@ -13,7 +13,7 @@ import '../widgets/header_widget.dart';
 import '../widgets/footer_widget.dart';
 
 class Communities extends StatelessWidget {
-  const Communities({Key? key}) : super(key: key);
+  const Communities({super.key});
 
   @override
   Widget build(BuildContext context) {

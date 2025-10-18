@@ -4,7 +4,7 @@ import 'faq_item.dart';
 import './constants/colors.dart';
 
 class FAQSection extends StatelessWidget {
-  const FAQSection({Key? key}) : super(key: key);
+  const FAQSection({super.key});
 
   @override
   Widget build(BuildContext context) {

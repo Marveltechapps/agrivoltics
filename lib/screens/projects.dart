@@ -29,7 +29,7 @@ class _ProjectsState extends State<Projects> with WidgetsBindingObserver {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _controller = VideoPlayerController.networkUrl(Uri.parse(
-        "https://nextagri.s3.ap-south-1.amazonaws.com/Agrivoltics+final.mp4"))
+        "https://nextagri.s3.ap-south-1.amazonaws.com/Avaram+final.mp4"))
       ..initialize().then((_) {
         setState(() {});
         _controller.addListener(() {

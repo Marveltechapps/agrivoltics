@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../constants/text_styles.dart';
 
 class FAQSection extends StatelessWidget {
-  const FAQSection({Key? key}) : super(key: key);
+  const FAQSection({super.key});
 
   @override
   Widget build(BuildContext context) {

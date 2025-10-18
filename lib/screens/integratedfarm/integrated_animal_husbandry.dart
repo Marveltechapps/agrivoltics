@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class IntegratedAnimalHusbandry extends StatelessWidget {
-  const IntegratedAnimalHusbandry({Key? key}) : super(key: key);
+  const IntegratedAnimalHusbandry({super.key});
 
   @override
   Widget build(BuildContext context) {

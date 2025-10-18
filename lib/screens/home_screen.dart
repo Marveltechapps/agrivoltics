@@ -15,7 +15,7 @@ import '../widgets/content_section_widget.dart';
 import '../widgets/footer_widget.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

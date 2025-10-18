@@ -3,7 +3,7 @@ import './utils/responsive_helper.dart';
 import './styles/text_styles.dart';
 
 class CurrentOpenings extends StatelessWidget {
-  const CurrentOpenings({Key? key}) : super(key: key);
+  const CurrentOpenings({super.key});
 
   @override
   Widget build(BuildContext context) {

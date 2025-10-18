@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'detail_section.dart';
 
 class CarbonCredits extends StatelessWidget {
-  const CarbonCredits({Key? key}) : super(key: key);
+  const CarbonCredits({super.key});
 
   @override
   Widget build(BuildContext context) {

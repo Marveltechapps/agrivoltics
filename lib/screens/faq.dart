@@ -14,7 +14,7 @@ import '../widgets/content_section_widget.dart';
 import '../widgets/footer_widget.dart';
 
 class Faq extends StatelessWidget {
-  const Faq({Key? key}) : super(key: key);
+  const Faq({super.key});
 
   @override
   Widget build(BuildContext context) {

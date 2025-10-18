@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'content_block.dart';
 
 class SustainableSection extends StatelessWidget {
-  const SustainableSection({Key? key}) : super(key: key);
+  const SustainableSection({super.key});
 
   @override
   Widget build(BuildContext context) {

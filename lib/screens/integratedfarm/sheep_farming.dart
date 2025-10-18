@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'benefit_card.dart';
 
 class SheepFarming extends StatelessWidget {
-  const SheepFarming({Key? key}) : super(key: key);
+  const SheepFarming({super.key});
 
   @override
   Widget build(BuildContext context) {
